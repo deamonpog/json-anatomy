@@ -1,6 +1,6 @@
 # JSON Anatomy
 
-**Dissect JSON structure and navigate data safely with intuitive exploration tools.**
+**Scout, explore, infer, and analyze JSON structure and navigate data safely with intuitive exploration tools.**
 
 !!! warning "Migration Notice for json-scout Users"
     This package was previously named **json-scout**. If you're upgrading from `json-scout`:
