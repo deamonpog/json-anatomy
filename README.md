@@ -6,7 +6,7 @@
 
 > **⚠️ MIGRATION NOTICE**: This package was previously named `json-scout`. If you're upgrading from `json-scout`, please see the [Migration Guide](MIGRATION.md) for instructions on updating your code.
 
-**Dissect JSON structure and navigate data safely with intuitive exploration tools.**
+**Scout, explore, infer, and analyze JSON structure and navigate data safely with intuitive exploration tools.**
 
 JSON Anatomy provides a robust suite of tools designed for developers and data professionals who need to introspect, analyze, and safely navigate complex JSON data structures. Whether you're working with APIs, configuration files, or large datasets, JSON Anatomy offers both low-level utilities and high-level abstractions to make JSON exploration intuitive and error-free.
 

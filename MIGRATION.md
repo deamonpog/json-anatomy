@@ -10,7 +10,7 @@ If you previously installed `json-scout`, please update to the new package name.
 
 ## Why the Change?
 
-The package has been rebranded to better reflect its purpose of dissecting and analyzing JSON structures, similar to how anatomical analysis examines biological structures in detail.
+The package has been rebranded to better reflect its purpose of scouting, exploring, infering and analyzing JSON structures, similar to how anatomical analysis examines biological structures in detail.
 
 ---
 
