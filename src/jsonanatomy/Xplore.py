@@ -70,7 +70,7 @@ class Xplore:
         str
             A formatted string showing the type and size of the explored data.
         """
-        return f"Explore({type(self.data)}[size={len(self.data)}])" if hasattr(self.data, "__len__") else f"Xplore({type(self.data)})[size=N/A]"
+        return f"Xplore({type(self.data)}[size={len(self.data)}])" if hasattr(self.data, "__len__") else f"Xplore({type(self.data)})[size=N/A]"
     
     def __getitem__(self, key):
         """
