@@ -433,7 +433,7 @@ mkdocs serve
 
 # 4. Build and test package
 python -m build
-pip install dist/json_scout-0.1.0-py3-none-any.whl
+pip install dist/json_anatomy-0.1.0-py3-none-any.whl
 python scripts/test_installation.py
 
 # 5. Commit changes

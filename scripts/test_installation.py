@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Test script for JSON Scout package installation and basic functionality.
+Test script for JSON Anatomy package installation and basic functionality.
 Run this in a fresh environment after installing the package.
 """
 
@@ -148,7 +148,7 @@ def test_version_info():
 
 def main():
     """Run all tests."""
-    print("🧪 JSON Scout Package Test Suite")
+    print("🧪 JSON Anatomy Package Test Suite")
     print("=" * 40)
     
     success = True

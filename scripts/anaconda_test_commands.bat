@@ -1,7 +1,7 @@
-REM JSON Scout Testing Commands for Anaconda Prompt
+REM JSON Anatomy Testing Commands for Anaconda Prompt
 REM Copy and paste these commands one by one
 
-echo "🚀 JSON Scout Package Testing in Anaconda Prompt"
+echo "🚀 JSON Anatomy Package Testing in Anaconda Prompt"
 
 REM Step 1: Ensure you're in the right environment and build
 conda activate jsonexplore
@@ -14,7 +14,7 @@ REM Step 3: Activate test environment
 conda activate jsonanatomy-test
 
 REM Step 4: Install package (adjust path if needed)
-pip install dist\json_scout-0.1.0-py3-none-any.whl
+pip install dist\json_anatomy-0.2.0-py3-none-any.whl
 
 REM Step 5: Basic import test
 python -c "import jsonanatomy; print('✅ Basic import works')"
