@@ -70,7 +70,7 @@ class Xplore:
         str
             A formatted string showing the type and size of the explored data.
         """
-        return f"Explore({type(self.data)}[size={len(self.data)}])" if hasattr(self.data, "__len__") else f"Xplore({type(self.data)})[size=N/A]"
+        return f"Xplore({type(self.data)}[size={len(self.data)}])" if hasattr(self.data, "__len__") else f"Xplore({type(self.data)})[size=N/A]"
     
     def __getitem__(self, key):
         """
@@ -140,3 +140,65 @@ class Xplore:
         >>> assert original is data  # Same object reference
         """
         return self.data
+    
+    def field_counts(self):
+        """
+        Get counts of fields.
+
+        Returns
+        -------
+        dict
+            A dictionary mapping field names to their occurrence counts.
+            Empty dict if data is not a list of dictionaries.
+
+        Examples
+        --------
+        >>> data = [{'name': 'Alice'}, {'name': 'Bob', 'age': 25}, {'age': 30}]
+        >>> xplore = Xplore(data)
+        >>> counts = xplore.field_counts()
+        >>> print(counts)  # {'name': 2, 'age': 2}
+        """
+        return self.explore.field_counts()
+    
+    def children_with(self, predicate):
+        """
+        Get child keys that satisfy a given predicate.
+
+        Parameters
+        ----------
+        predicate : function
+            A function that takes a child key and its value and returns True
+              if the key should be included.
+
+        Returns
+        -------
+        list
+            A list of child keys that satisfy the predicate.
+
+        Examples
+        --------
+        >>> data = {'name': 'Alice', 'age': 30, 'email': 'alice@example.com'}
+        >>> xplore = Xplore(data)
+        >>> filtered = xplore.children_with(lambda k: k.startswith('a'))
+        >>> print(filtered)
+        ['age', 'email']
+        """
+        return [key for key in self.keys() if predicate(key, self[key])]
+    
+    def contains(self, value):
+        """
+        Check if the current data contains a specific value.
+
+        Returns
+        -------
+        bool
+            True if the value is found, False otherwise.
+
+        Examples
+        --------
+        >>> data = [10, 20, 30]
+        >>> xplore = Xplore(data)
+        >>> print(xplore.contains(20))  # True
+        >>> print(xplore.contains(40))  # False
+        """
+        return value in self.data

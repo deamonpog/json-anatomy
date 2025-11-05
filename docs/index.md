@@ -2,15 +2,6 @@
 
 **Scout, explore, infer, and analyze JSON structure and navigate data safely with intuitive exploration tools.**
 
-!!! warning "Migration Notice for json-scout Users"
-    This package was previously named **json-scout**. If you're upgrading from `json-scout`:
-    
-    1. Uninstall the old package: `pip uninstall json-scout`
-    2. Install the new package: `pip install json-anatomy`
-    3. Update imports: `import jsonscout` → `import jsonanatomy`
-    
-    See the complete [Migration Guide](https://github.com/deamonpog/json-anatomy/blob/main/MIGRATION.md) for detailed instructions.
-
 JSON Anatomy provides a robust suite of tools designed for developers and data professionals who need to introspect, analyze, and safely navigate complex JSON data structures. Whether you're working with APIs, configuration files, or large datasets, JSON Anatomy offers both low-level utilities and high-level abstractions to make JSON exploration intuitive and error-free.
 
 ## Key Features
@@ -104,8 +95,10 @@ for file_path in json_files:
 
 ### XML Integration
 
+JSON Anatomy uses `lxml` for robust XML parsing, supporting both well-formed XML and malformed/fragment XML with automatic fallback to HTML parsing.
+
 ```python
-# Convert XML to JSON-like structures
+# Convert XML to JSON-like structures (well-formed)
 xml_data = """
 <users>
     <user>
@@ -119,6 +112,11 @@ explorer = ja.Xplore(xml_data)
 if explorer.xml:
     json_structure = explorer.xml.to_dict()
     print(json_structure)  # {'user': {'name': 'Alice', 'age': '30'}}
+
+# Also handles malformed XML and fragments automatically
+malformed_xml = '<item>Test</item><br><item>Another</item>'
+parser = ja.SimpleXML(malformed_xml)
+result = parser.to_dict()  # Automatically wraps in root and uses lenient parsing
 ```
 
 ## Use Cases
@@ -145,11 +143,11 @@ if explorer.xml:
 
 ## Architecture
 
-JSON Scout is built around four core components:
+JSON Anatomy is built around four core components:
 
 - **`Explore`**: Lightweight structural analysis and schema discovery
 - **`Maybe`**: Monadic wrapper for safe, chainable data access
-- **`SimpleXML`**: Efficient XML-to-dictionary conversion utilities
+- **`SimpleXML`**: Robust XML/HTML-to-dictionary conversion (powered by lxml)
 - **`Xplore`**: Unified facade combining all functionality into a single interface
 
 This modular design allows you to use individual components for specific tasks or leverage the unified interface for comprehensive JSON exploration workflows.
@@ -168,3 +166,15 @@ We welcome contributions! Please see our contributing guidelines for details on 
 
 JSON Anatomy is released under the Apache License 2.0. See the [LICENSE](LICENSE.txt) file for details.
 Copyright © 2025 Chathura Jayalath. See the [NOTICE](NOTICE.txt) file for more details.
+
+---
+
+## Migrating from json-scout?
+
+This package was previously named **json-scout**. If you're upgrading:
+
+1. Uninstall: `pip uninstall json-scout`
+2. Install: `pip install json-anatomy`
+3. Update imports: `import jsonscout` → `import jsonanatomy`
+
+See the complete [Migration Guide](https://github.com/deamonpog/json-anatomy/blob/main/MIGRATION.md) for detailed instructions.

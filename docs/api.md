@@ -45,7 +45,14 @@ The `Maybe` class implements a monadic pattern for safe, exception-free navigati
 
 ### XML Processing Module
 
-The `SimpleXML` class provides efficient XML-to-dictionary conversion capabilities for integrating XML data sources into JSON-based workflows.
+The `SimpleXML` class provides efficient XML-to-dictionary conversion capabilities for integrating XML data sources into JSON-based workflows. Built on `lxml`, it supports both well-formed XML and malformed/fragment XML with automatic fallback to lenient HTML parsing.
+
+**Key Features:**
+- Powered by `lxml` for high performance and robustness
+- Automatic handling of XML fragments (missing root tags)
+- Lenient parsing fallback for malformed XML/HTML
+- Case-preserving when using strict XML mode
+- Tag frequency analysis for structural understanding
 
 ::: jsonanatomy.SimpleXML
 

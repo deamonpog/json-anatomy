@@ -5,6 +5,38 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+## [0.2.0] - 2025-11-05
+
+### Changed
+
+- **XML parsing engine migrated from `xml.etree.ElementTree` to `lxml`**
+  - Improved performance for XML parsing operations
+  - Enhanced robustness with automatic handling of malformed XML
+  - Automatic fallback to lenient HTML parsing for malformed markup
+  - Support for XML fragments (missing root tags) with automatic wrapping
+  - Tag case preservation in strict XML mode
+  
+### Added
+
+- `lxml>=4.9.0` as a required dependency
+- Comprehensive XML parsing documentation with examples
+- Support for parsing malformed HTML-like XML markup
+- Acknowledgment of lxml dependency in NOTICE file
+
+### Fixed
+
+- Updated package URLs in `_version.py` from json-scout to json-anatomy
+- Corrected project name in NOTICE file from "JSON Scout" to "JSON Anatomy"
+
+### Documentation
+
+- Updated all XML-related documentation to reflect lxml usage
+- Added examples for handling XML fragments and malformed markup
+- Enhanced `SimpleXML` class docstrings with parsing strategy details
+- Updated README and API documentation to highlight lxml-powered XML parsing
+
 ## [0.1.0] - 2025-10-20
 
 ### Changed

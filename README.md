@@ -4,8 +4,6 @@
 [![Python](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](./LICENSE)
 
-> **⚠️ MIGRATION NOTICE**: This package was previously named `json-scout`. If you're upgrading from `json-scout`, please see the [Migration Guide](MIGRATION.md) for instructions on updating your code.
-
 **Scout, explore, infer, and analyze JSON structure and navigate data safely with intuitive exploration tools.**
 
 JSON Anatomy provides a robust suite of tools designed for developers and data professionals who need to introspect, analyze, and safely navigate complex JSON data structures. Whether you're working with APIs, configuration files, or large datasets, JSON Anatomy offers both low-level utilities and high-level abstractions to make JSON exploration intuitive and error-free.
@@ -14,7 +12,7 @@ JSON Anatomy provides a robust suite of tools designed for developers and data p
 
 - **🔍 Structural Analysis**: Automatic schema discovery and hierarchy inspection
 - **🛡️ Safe Navigation**: Exception-free access with monadic-style `Maybe` wrapper
-- **🔧 Comprehensive Utilities**: File operations, XML integration, and unified interface
+- **🔧 Comprehensive Utilities**: File operations, robust XML/HTML parsing (powered by `lxml`), and unified interface
 - **📊 Enterprise Ready**: Type safety, performance optimization, and comprehensive documentation
 
 ## 🚀 Quick Start
@@ -67,7 +65,7 @@ for file_path in json_files:
 
 - **`Explore`**: Lightweight structural analysis and schema discovery
 - **`Maybe`**: Monadic wrapper for safe, chainable data access
-- **`SimpleXML`**: Efficient XML-to-dictionary conversion utilities
+- **`SimpleXML`**: Robust XML/HTML-to-dictionary conversion (powered by `lxml`) with automatic handling of malformed markup
 - **`Xplore`**: Unified facade combining all functionality
 
 ## 🎯 Use Cases
@@ -81,3 +79,7 @@ for file_path in json_files:
 
 JSON Anatomy is licensed under the [Apache License 2.0](./LICENSE).  
 © 2025 Chathura Jayalath. See the [NOTICE](./NOTICE) file for more details.
+
+---
+
+**Note**: This package was previously named `json-scout`. See the [Migration Guide](MIGRATION.md) if you're upgrading.

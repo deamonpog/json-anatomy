@@ -50,7 +50,7 @@ Before building, verify everything is ready:
 Check `src/jsonanatomy/_version.py`:
 
 ```python
-__version__ = "0.1.0"  # Update as needed
+__version__ = "0.2.0"  # Update as needed
 ```
 
 ### 2. Package Metadata
@@ -115,7 +115,7 @@ python -m build
 * Getting build dependencies for sdist...
 * Building sdist...
 * Building wheel from sdist...
-Successfully built json_scout-0.1.0.tar.gz and json_scout-0.1.0-py3-none-any.whl
+Successfully built json_anatomy-0.2.0.tar.gz and json_anatomy-0.2.0-py3-none-any.whl
 ```
 
 ### Step 3: Verify Build Artifacts
@@ -126,8 +126,8 @@ dir dist\
 ```
 
 You should see:
-- `json_scout-0.1.0.tar.gz` (source distribution)
-- `json_scout-0.1.0-py3-none-any.whl` (wheel distribution)
+- `json_anatomy-0.2.0.tar.gz` (source distribution)
+- `json_anatomy-0.2.0-py3-none-any.whl` (wheel distribution)
 
 ---
 
@@ -143,10 +143,10 @@ conda create -n jsonanatomy-test python=3.9 -y
 conda activate jsonanatomy-test
 
 # Install from local wheel
-pip install dist\json_scout-0.1.0-py3-none-any.whl
+pip install dist\json_anatomy-0.2.0-py3-none-any.whl
 
 # Test imports
-python -c "import jsonanatomy as js; print(js.__version__)"
+python -c "import jsonanatomy as ja; print(ja.__version__)"
 
 # Run comprehensive tests
 python scripts\test_installation.py
@@ -257,16 +257,16 @@ pip install json-anatomy
 ### 1. Tag the Release in Git
 
 ```bash
-git tag -a v0.1.0 -m "Release version 0.1.0"
-git push origin v0.1.0
+git tag -a v0.2.0 -m "Release version 0.2.0"
+git push origin v0.2.0
 ```
 
 ### 2. Create GitHub Release
 
 Go to: https://github.com/deamonpog/json-anatomy/releases/new
 
-- Tag: `v0.1.0`
-- Title: `JSON Anatomy v0.1.0`
+- Tag: `v0.2.0`
+- Title: `JSON Anatomy v0.2.0`
 - Description: Copy from CHANGELOG
 
 ### 3. Update Documentation
@@ -368,7 +368,7 @@ Remove-Item -Path "dist", "build" -Recurse -Force -ErrorAction SilentlyContinue
 python -m build
 
 # Test locally
-pip install dist\json_scout-0.1.0-py3-none-any.whl
+pip install dist\json_anatomy-0.2.0-py3-none-any.whl
 python scripts\test_installation.py
 
 # Upload to Test PyPI (recommended first)
@@ -378,8 +378,8 @@ python -m twine upload --repository testpypi dist/*
 python -m twine upload dist/*
 
 # Tag release
-git tag -a v0.1.0 -m "Release v0.1.0"
-git push origin v0.1.0
+git tag -a v0.2.0 -m "Release v0.2.0"
+git push origin v0.2.0
 
 # Deploy docs
 mkdocs gh-deploy
@@ -391,9 +391,10 @@ mkdocs gh-deploy
 
 Follow [Semantic Versioning](https://semver.org/):
 
-- **0.1.0** - Initial release
-- **0.1.1** - Bug fixes
-- **0.2.0** - New features (backward compatible)
+- **0.1.0** - Initial release (package renamed from json-scout)
+- **0.2.0** - lxml migration and enhanced XML parsing
+- **0.2.1** - Bug fixes (patch)
+- **0.3.0** - New features (backward compatible)
 - **1.0.0** - First stable release
 - **2.0.0** - Breaking changes
 

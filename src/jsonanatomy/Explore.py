@@ -179,3 +179,31 @@ class Explore:
                     counts[grandChildKey] = 1
             
         return counts
+    
+    def field_counts_at(self, depth = 0):
+        """
+        Analyze field name distribution at a specified depth.
+
+        This method traverses the JSON structure to the given depth
+        and then computes field counts for the objects found at that level.
+
+        Parameters
+        ----------
+        depth : int, optional
+            The depth level to analyze (0 = current level), by default 0.
+
+        Returns
+        -------
+        dict
+            A dictionary mapping field names to their occurrence counts
+            at the specified depth."""
+        if depth == 0:
+            return self.field_counts()
+        counts = {}
+        for child_key in self.child_keys:
+            expChild = self.child(child_key)
+            child_counts = expChild.field_counts_at(depth - 1) if expChild else {}
+            for field, count in child_counts.items():
+                counts[field] = counts.get(field, 0) + count
+        return counts
+    
